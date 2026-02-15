@@ -1067,6 +1067,7 @@ div {
     animation: fadeInUp 1s ease-out 0.8s both !important;
 }
 </style></head>
+
     <body>
         <script async src="https://events.framer.com/script?v=2"
             data-fid="b59e07eabc4895e072e22a0c6fed670cfb9b89108aaee0defa6398c5d1f028e0"
@@ -1094,7 +1095,8 @@ div {
                         #__framer-badge-container { display: none !important; }
                     </style><div></div></div><!--/$--></div><div
                     class="framer-t10cp0" data-framer-name="Container"><div
-                        class="framer-g116mj" data-framer-name="Main"><div
+                        class="framer-g116mj" data-framer-name="Main">
+                        <!-- <div
                             style="display: none;"
                             class="framer-10izldj" data-framer-name="Music"><div
                                 class="ssr-variant hidden-1l9f9eo hidden-3nf04q"><div
@@ -1115,7 +1117,8 @@ div {
                                                 d="M 3 3 C 3 2.448 3.448 2 4 2 L 6 2 C 6.552 2 7 2.448 7 3 L 7 13 C 7 13.552 6.552 14 6 14 L 4 14 C 3.448 14 3 13.552 3 13 Z"
                                                 fill="#343434"></path><path
                                                 d="M 9 3 C 9 2.448 9.448 2 10 2 L 12 2 C 12.552 2 13 2.448 13 3 L 13 13 C 13 13.552 12.552 14 12 14 L 10 14 C 9.448 14 9 13.552 9 13 Z"
-                                                fill="#343434"></path></svg></div></div></div></div><div
+                                                fill="#343434"></path></svg></div></div></div></div> -->
+                        <div
                             class="framer-bo7x1i"
                             style="display: none;"
                             data-framer-name="Watermark"><div
@@ -3418,4 +3421,26 @@ div {
             <iframe id="__framer-editorbar"
                 src="https://framer.com/edit?framerSiteId=b59e07eabc4895e072e22a0c6fed670cfb9b89108aaee0defa6398c5d1f028e0&amp;source=www.missingpieceinvites.com&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1771154867249"
                 aria-hidden="true" allow="autoplay" tabindex="-1"
-                class="status_hidden"></iframe></body></html>
+                class="status_hidden"></iframe>
+            <audio
+                id="bg-music"
+                src="https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
+                loop
+                playsinline></audio>
+
+            <script>
+                const audio = document.getElementById("bg-music");
+              
+                function playOnScroll() {
+                  audio.play().then(() => {
+                    console.log("Music started on scroll");
+                  }).catch(err => {
+                    console.log("Autoplay blocked:", err);
+                  });
+              
+                  // Remove listener after first scroll
+                  window.removeEventListener("scroll", playOnScroll);
+                }
+              
+                window.addEventListener("scroll", playOnScroll, { once: true });
+              </script></body></html>
