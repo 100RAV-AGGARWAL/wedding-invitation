@@ -1,2 +1,0 @@
-import { t as e } from "./rolldown-runtime.DYJfJqco.mjs"; import { K as t, j as n } from "./framer.DHnVnQh0.mjs"; var r, i, a, o = e((() => { t(), n.loadFonts([]), r = [{ explicitInter: !0, fonts: [] }], i = [`.framer-qoU2h .framer-styles-preset-kmt2jv:not(.rich-text-wrapper), .framer-qoU2h .framer-styles-preset-kmt2jv.rich-text-wrapper a { --framer-link-current-text-decoration: underline; --framer-link-text-color: #000000; }`], a = `framer-qoU2h` })); export { o as i, i as n, r, a as t };
-//# sourceMappingURL=bqzoPsKqs.CLXwSOKL.mjs.map
