@@ -3431,16 +3431,17 @@ div {
             <script>
                 const audio = document.getElementById("bg-music");
               
-                function playOnScroll() {
+                function startMusic() {
                   audio.play().then(() => {
-                    console.log("Music started on scroll");
+                    console.log("Music started");
                   }).catch(err => {
-                    console.log("Autoplay blocked:", err);
+                    console.log("Blocked:", err);
                   });
               
-                  // Remove listener after first scroll
-                  window.removeEventListener("scroll", playOnScroll);
+                  document.removeEventListener("touchstart", startMusic);
+                  document.removeEventListener("click", startMusic);
                 }
               
-                window.addEventListener("scroll", playOnScroll, { once: true });
+                document.addEventListener("touchstart", startMusic, { once: true });
+                document.addEventListener("click", startMusic, { once: true });
               </script></body></html>
