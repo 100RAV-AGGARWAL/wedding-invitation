@@ -15,36 +15,38 @@
         <meta name="generator" content="Framer 293632e">
         <title>Yashi Weds Tarun Invitation</title>
         <meta name="description"
-            content="A modern wedding invite that opens as a website. Customize instantly, add photos, and share with guests on WhatsApp. Perfect for every ceremony.">
+            content="Wedding invitation of Yashi weds Tarun. You are wholeheartedly invited with family">
         <meta name="framer-search-index"
             content="https://framerusercontent.com/sites/3bR6R2YrHoycodLqL6z8ep/searchIndex-XNiNmon2osWU.json">
         <meta name="framer-search-index-fallback"
             content="https://framerusercontent.com/sites/3bR6R2YrHoycodLqL6z8ep/searchIndex-fVYefxLds5rI.json">
         <meta name="framer-html-plugin" content="disable">
         <link
-            href="https://framerusercontent.com/images/VRr5oPbK8EC2e8xlsQcVIsS47c.png"
+            href="assets/ganesha.png"
+            type="image/png"
             rel="icon" media="(prefers-color-scheme: light)">
         <link
-            href="https://framerusercontent.com/images/vqNg8mNroPNlpAOMAK02feK2gc.png"
+            href="assets/ganesha.png"
+            type="image/png"
             rel="icon" media="(prefers-color-scheme: dark)">
         <link rel="apple-touch-icon"
-            href="https://framerusercontent.com/images/crQk5UzfRd9W9n54FdrUY2WUTU.png">
+            href="assets/ganesha.png">
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:title"
             content="Yashi Weds Tarun Invitation">
         <meta property="og:description"
-            content="A modern wedding invite that opens as a website. Customize instantly, add photos, and share with guests on WhatsApp. Perfect for every ceremony.">
+            content="Wedding invitation of Yashi weds Tarun. You are wholeheartedly invited with family">
         <meta property="og:image"
-            content="https://framerusercontent.com/assets/7LPUQldg1w5B1Zrz0pCfh0AeQw.png">
+            content="assets/ganesha">
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title"
             content="Yashi Weds Tarun Invitation">
         <meta name="twitter:description"
-            content="A modern wedding invite that opens as a website. Customize instantly, add photos, and share with guests on WhatsApp. Perfect for every ceremony.">
+            content="Wedding invitation of Yashi weds Tarun. You are wholeheartedly invited with family">
         <meta name="twitter:image"
-            content="https://framerusercontent.com/assets/7LPUQldg1w5B1Zrz0pCfh0AeQw.png">
+            content="assets/ganesha">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async
@@ -3444,43 +3446,24 @@ animation: fadeInUp 1s ease-out 0.8s both !important;
                 src="https://framer.com/edit?framerSiteId=b59e07eabc4895e072e22a0c6fed670cfb9b89108aaee0defa6398c5d1f028e0&amp;source=www.missingpieceinvites.com&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1771154867249"
                 aria-hidden="true" allow="autoplay" tabindex="-1"
                 class="status_hidden"></iframe>
+            <span id="dummy_audio"></span>
             <audio
                 id="bg-music"
                 src="https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
                 preload="auto"
-                loop
-                playsinline>
+                loop>
             </audio>
 
             <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const audio = document.getElementById("bg-music");
               
-                function startMusic() {
-                    if(!audio){
-                        audio = new Audio('https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3');
-                    }
-              
-                  audio.muted = false;
-                  audio.currentTime = 0;
-              
-                  const playPromise = audio.play();
-              
-                  if (playPromise !== undefined) {
-                    playPromise
-                      .then(() => {
-                        console.log("Music started");
-                      })
-                      .catch((err) => {
-                        console.log("Playback failed:", err);
-                      });
-                  }
-              
-                  document.removeEventListener("touchstart", startMusic);
-                  document.removeEventListener("click", startMusic);
-                }
-              
-                document.addEventListener("touchstart", startMusic);
-                document.addEventListener("click", startMusic);
-              });
+              var audio = $("bg-music")[0];
+              audio.src = "https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
+
+              $("#dummy_audio").trigger("click");
+
+
+$('#dummyElement').on('click', () => {
+  audio.play();
+});
+
               </script></body></html>
