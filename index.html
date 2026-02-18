@@ -3446,7 +3446,6 @@ animation: fadeInUp 1s ease-out 0.8s both !important;
                 src="https://framer.com/edit?framerSiteId=b59e07eabc4895e072e22a0c6fed670cfb9b89108aaee0defa6398c5d1f028e0&amp;source=www.missingpieceinvites.com&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1771154867249"
                 aria-hidden="true" allow="autoplay" tabindex="-1"
                 class="status_hidden"></iframe>
-            <span id="dummy_audio"></span>
             <audio
                 id="bg-music"
                 src="https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
@@ -3455,15 +3454,37 @@ animation: fadeInUp 1s ease-out 0.8s both !important;
             </audio>
 
             <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const audio = document.getElementById("bg-music");
+                  
+                    function startMusic() {
+                        if(!audio){
+                            audio = new Audio('https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3');
+                        }
+                  
+                      audio.muted = false;
+                      audio.currentTime = 0;
+                  
+                      const playPromise = audio.play();
+                  
+                      if (playPromise !== undefined) {
+                        playPromise
+                          .then(() => {
+                            console.log("Music started");
+                          })
+                          .catch((err) => {
+                            console.log("Playback failed:", err);
+                          });
+                      }
+                  
+                      document.removeEventListener("touchstart", startMusic);
+                      document.removeEventListener("click", startMusic);
+                    }
+                  
+                    document.addEventListener("touchstart", startMusic);
+                    document.addEventListener("click", startMusic);
+                  });
               
-              var audio = $("bg-music")[0];
-              audio.src = "https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
 
-              $("#dummy_audio").trigger("click");
-
-
-$('#dummyElement').on('click', () => {
-  audio.play();
-});
 
               </script></body></html>
