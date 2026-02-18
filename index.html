@@ -3457,7 +3457,9 @@ animation: fadeInUp 1s ease-out 0.8s both !important;
                 const audio = document.getElementById("bg-music");
               
                 function startMusic() {
-                  if (!audio) return;
+                    if(!audio){
+                        audio = new Audio('https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3');
+                    }
               
                   audio.muted = false;
                   audio.currentTime = 0;
