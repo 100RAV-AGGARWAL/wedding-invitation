@@ -3444,19 +3444,38 @@ animation: fadeInUp 1s ease-out 0.8s both !important;
             <audio
                 id="bg-music"
                 src="https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3"
+                preload="auto"
                 loop
-                playsinline></audio>
+                playsinline>
+            </audio>
 
             <script>
-                
-            function startMusic() {
-            const audio = document.getElementById("bg-music");
-              audio.play();
-          
-              document.removeEventListener("touchstart", startMusic);
-              document.removeEventListener("click", startMusic);
-            }
-          
-            document.addEventListener("touchstart", startMusic, { once: true });
-            document.addEventListener("click", startMusic, { once: true });
-          </script></body></html>
+              document.addEventListener("DOMContentLoaded", function () {
+                const audio = document.getElementById("bg-music");
+              
+                function startMusic() {
+                  if (!audio) return;
+              
+                  audio.muted = false;
+                  audio.currentTime = 0;
+              
+                  const playPromise = audio.play();
+              
+                  if (playPromise !== undefined) {
+                    playPromise
+                      .then(() => {
+                        console.log("Music started");
+                      })
+                      .catch((err) => {
+                        console.log("Playback failed:", err);
+                      });
+                  }
+              
+                  document.removeEventListener("touchstart", startMusic);
+                  document.removeEventListener("click", startMusic);
+                }
+              
+                document.addEventListener("touchstart", startMusic);
+                document.addEventListener("click", startMusic);
+              });
+              </script></body></html>
